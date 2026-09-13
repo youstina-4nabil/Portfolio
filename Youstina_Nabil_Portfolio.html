@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youstina Nabil – Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css" />
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+                html {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fc;
+            color: #1e1e2a;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+                nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eaeef5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #f8f9fc;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d2b4b;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+        .logo span { color: #6c5ce7; }
+        .logo a { cursor: pointer; }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+            list-style: none;
+        }
+        .nav-links a {
+            font-weight: 500;
+            color: #3d3d5c;
+            transition: color 0.2s, border-color 0.2s;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+        .nav-links a:hover { color: #6c5ce7; }
+        .nav-links a.active {
+            color: #6c5ce7;
+            font-weight: 600;
+            border-bottom: 2px solid #6c5ce7;
+        }
+        .nav-links .cv-btn {
+            background: #6c5ce7;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            border-bottom: none;
+        }
+        .nav-links .cv-btn:hover {
+            background: #5a4bd1;
+            color: #fff;
+        }
+        .nav-links .cv-btn.active {
+            border-bottom: none;
+            background: #5a4bd1;
+            color: #fff;
+        }
+
+                .section {
+            padding: 60px 0 80px;
+            scroll-margin-top: 90px;
+        }
+        #project-details.section {
+            display: none;
+        }
+        #project-details.section.open {
+            display: block;
+        }
+
+                #home { padding-top: 30px; scroll-margin-top: 70px; }
+        .home-grid {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .home-content { flex: 1 1 400px; }
+        .home-content h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #6c5ce7;
+            margin-bottom: 6px;
+        }
+        .home-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        .home-content h1 span { color: #6c5ce7; }
+
+                .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6c5ce7;
+            box-shadow: 0 8px 30px rgba(108, 92, 231, 0.3);
+            margin: 10px 0 14px 0;
+            display: block;
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .profile-image:hover {
+            transform: scale(1.07) rotate(-2deg);
+            box-shadow: 0 14px 45px rgba(108, 92, 231, 0.55);
+            border-color: #5a4bd1;
+        }
+
+        .home-content .title-role {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d2b4b;
+            margin-bottom: 16px;
+        }
+        .home-content p {
+            max-width: 540px;
+            color: #555577;
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #6c5ce7;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #5a4bd1;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            border-color: #6c5ce7;
+            color: #6c5ce7;
+        }
+        .btn-outline:hover {
+            background: #6c5ce7;
+            color: #fff;
+        }
+        .home-tagline {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #2d2b4b;
+            border-top: 1px solid #eaeef5;
+            padding-top: 30px;
+            width: 100%;
+        }
+        .home-tagline strong { color: #6c5ce7; }
+
+                .phone-mockup {
+            flex: 0 0 230px;
+            height: 460px;
+            background: #1e1e2a;
+            border-radius: 40px;
+            padding: 14px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        .phone-mockup:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 80px rgba(108, 92, 231, 0.4);
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #2d2b4b, #1a1a2e);
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .phone-notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 24px;
+            background: #0a0a14;
+            border-radius: 20px;
+        }
+        .phone-flutter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: rgba(255,255,255,0.05);
+            padding: 12px 18px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .phone-mockup:hover .phone-flutter {
+            border-color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.15);
+            transform: scale(1.05);
+        }
+        .phone-flutter i {
+            font-size: 3.5rem;
+            color: #6c5ce7;
+        }
+        .phone-flutter span {
+            color: #6c5ce7;
+        }
+        .phone-home-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 1rem;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .phone-home-btn:hover {
+            background: rgba(108, 92, 231, 0.3);
+            border-color: #6c5ce7;
+            color: #fff;
+        }
+
+                @media (max-width: 768px) {
+            .home-grid { 
+                flex-direction: column; 
+                text-align: center;
+                gap: 25px;
+            }
+            .home-content p { margin-left: auto; margin-right: auto; }
+            .btn-group { justify-content: center; }
+            .profile-image { 
+                margin-left: auto; 
+                margin-right: auto; 
+            }
+            .phone-mockup {
+                flex: 0 0 190px;
+                height: 380px;
+                padding: 10px;
+            }
+            .phone-mockup:hover {
+                transform: translateY(-8px) scale(1.02);
+            }
+            .phone-flutter i { font-size: 2.8rem; }
+            .phone-flutter { font-size: 1.1rem; padding: 10px 14px; margin-top: 15px; }
+            .phone-notch { width: 80px; height: 20px; top: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .phone-mockup {
+                flex: 0 0 160px;
+                height: 320px;
+                padding: 8px;
+            }
+            .phone-mockup:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+            .phone-flutter i { font-size: 2.2rem; }
+            .phone-flutter { font-size: 0.9rem; padding: 8px 12px; margin-top: 12px; }
+            .phone-notch { width: 60px; height: 16px; top: 6px; }
+            .profile-image { width: 100px; height: 100px; }
+        }
+
+                .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #2d2b4b;
+            margin-bottom: 10px;
+        }
+        .section-title span { color: #6c5ce7; }
+
+        .eyebrow {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #6c5ce7;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .section-tagline {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #2d2b4b;
+            margin-bottom: 26px;
+        }
+        .skills-subhead {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d2b4b;
+            margin-bottom: 20px;
+        }
+        .skills-subhead span { color: #6c5ce7; }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 10px auto 0;
+            max-width: 1160px;
+            padding: 0 20px;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d7d3f7 50%, transparent);
+        }
+        .section-divider .divider-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6c5ce7;
+            box-shadow: 0 0 0 5px rgba(108, 92, 231, 0.12);
+            flex-shrink: 0;
+        }
+
+        .about-split {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .about-main {
+            flex: 1 1 420px;
+            min-width: 280px;
+        }
+        .about-main p {
+            color: #555577;
+            font-size: 1.03rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .about-main p strong { color: #2d2b4b; }
+
+        .about-card {
+            flex: 0 1 380px;
+            min-width: 280px;
+            background: #fff;
+            border: 1px solid #e3e0fb;
+            border-radius: 18px;
+            padding: 8px 28px;
+            box-shadow: 0 12px 40px rgba(108, 92, 231, 0.16);
+            transition: 0.2s;
+        }
+        .about-card:hover {
+            border-color: #6c5ce7;
+            box-shadow: 0 16px 40px rgba(108, 92, 231, 0.3);
+        }
+        .about-card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid #eef0fa;
+        }
+        .about-card-row:last-child { border-bottom: none; }
+        .about-card-row .label {
+            color: #8a8aa3;
+            font-size: 0.95rem;
+        }
+        .about-card-row .value {
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #6c5ce7;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: right;
+        }
+
+        @media (max-width: 900px) {
+            .about-split { flex-direction: column; }
+            .about-card { width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .section-tagline { font-size: 1.9rem; }
+        }
+
+                .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 28px 24px;
+            border: 1px solid #edf0f7;
+            box-shadow: 0 6px 22px rgba(108, 92, 231, 0.14);
+            transition: 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #6c5ce7;
+            box-shadow: 0 16px 40px rgba(108, 92, 231, 0.28);
+        }
+        .service-card i {
+            font-size: 1.8rem;
+            color: #6c5ce7;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: #2d2b4b;
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            color: #555577;
+            font-size: 0.95rem;
+        }
+
+                .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .skill-card {
+            background: #fff;
+            padding: 18px 12px;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #2d2b4b;
+            box-shadow: 0 6px 18px rgba(108, 92, 231, 0.14);
+            border: 1px solid #edf0f7;
+            transition: 0.2s;
+        }
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: #6c5ce7;
+            color: #6c5ce7;
+            box-shadow: 0 12px 30px rgba(108, 92, 231, 0.28);
+        }
+
+                .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px 20px 20px;
+            box-shadow: 0 6px 22px rgba(108, 92, 231, 0.14);
+            border: 1px solid #edf0f7;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #6c5ce7;
+            box-shadow: 0 16px 40px rgba(108, 92, 231, 0.28);
+        }
+        .project-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+        .project-card .tech {
+            font-size: 0.85rem;
+            color: #6c5ce7;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: #555577;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .project-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .project-card .btn-small {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 30px;
+            background: #6c5ce7;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .project-card .btn-small:hover {
+            background: #5a4bd1;
+        }
+
+                .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .cert-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid #edf0f7;
+            box-shadow: 0 6px 18px rgba(108, 92, 231, 0.14);
+            transition: 0.2s;
+            text-align: center;
+        }
+        .cert-card:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(108, 92, 231, 0.28);
+        }
+        .cert-card h4 { font-size: 1.05rem; margin-bottom: 4px; }
+        .cert-card .cert-label {
+            color: #6c5ce7;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .cert-card .cert-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #6c5ce7;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+                .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 30px;
+            align-items: flex-start;
+        }
+        .contact-info { flex: 1; min-width: 250px; }
+        .contact-info h2 span { color: #6c5ce7; }
+        .contact-info p {
+            color: #555577;
+            margin: 12px 0 20px;
+            font-size: 1.05rem;
+        }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: #2d2b4b;
+            padding: 8px 16px;
+            border-radius: 40px;
+            background: #fff;
+            border: 1px solid #eaeef5;
+            transition: 0.2s;
+        }
+        .social-item i {
+            font-size: 1.3rem;
+            color: #6c5ce7;
+            width: 24px;
+        }
+        .social-item:hover {
+            border-color: #6c5ce7;
+            background: #f5f3ff;
+        }
+
+                .contact-form {
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: #2d2b4b;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border: 1px solid #eaeef5;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.2s;
+            background: #fff;
+            color: #1e1e2a;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #6c5ce7;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-note {
+            margin-top: 30px;
+            color: #3d3d5c;
+            font-weight: 400;
+            border-top: 1px solid #eaeef5;
+            padding-top: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 12px; }
+            .nav-links { justify-content: center; gap: 1rem; }
+            .home-content h1 { font-size: 2.5rem; }
+            .btn-group { justify-content: center; }
+            .contact-wrapper { flex-direction: column; align-items: center; }
+            .social-links { justify-content: center; }
+            .contact-form { width: 100%; max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .nav-links a { font-size: 0.8rem; }
+            .nav-links { gap: 0.7rem; }
+            .logo { font-size: 1.5rem; }
+            .nav-links .cv-btn { padding: 5px 12px; font-size: 0.8rem; }
+            .home-content h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .section-tagline { font-size: 1.8rem; }
+        }
+
+                #project-details {
+            padding-top: 40px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #6c5ce7;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: #5a4bd1;
+            transform: translateX(-4px);
+        }
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .project-detail-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d2b4b;
+            margin-bottom: 8px;
+        }
+        .project-title span {
+            color: #6c5ce7;
+        }
+
+        .project-tech {
+            font-size: 1.2rem;
+            color: #6c5ce7;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: #555577;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.7;
+        }
+
+        .project-video {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(108, 92, 231, 0.2);
+            margin-bottom: 30px;
+            background: #1a1a2e;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            background: #1a1a2e;
+        }
+
+        .project-detail-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-detail-buttons .btn {
+            min-width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.2rem;
+            }
+            .project-video {
+                border-radius: 12px;
+                max-width: 100%;
+            }
+        }
+
+                .theme-toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid #eaeef5;
+            background: #fff;
+            color: #6c5ce7;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            background: #f5f3ff;
+            border-color: #6c5ce7;
+        }
+
+        body, .section, nav, .about-card, .service-card, .skill-card,
+        .project-card, .cert-card, .social-item, .contact-form input,
+        .contact-form textarea, .theme-toggle-btn {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body.dark-theme { background-color: #14141f; color: #d6d6e8; }
+        body.dark-theme nav { background: #14141f; border-bottom-color: #2a2a3d; }
+        body.dark-theme .logo { color: #eaeaf7; }
+        body.dark-theme .theme-toggle-btn { background: #1c1c2b; border-color: #2a2a3d; color: #8b7cf6; }
+        body.dark-theme .theme-toggle-btn:hover { background: #23233a; border-color: #6c5ce7; }
+        body.dark-theme .nav-links a { color: #b7b7d1; }
+        body.dark-theme .nav-links a:hover { color: #8b7cf6; }
+        body.dark-theme .nav-links a.active { color: #8b7cf6; border-bottom-color: #8b7cf6; }
+        body.dark-theme .home-content h2 { color: #8b7cf6; }
+        body.dark-theme .home-content h1 { color: #eaeaf7; }
+        body.dark-theme .home-content h1 span { color: #8b7cf6; }
+        body.dark-theme .home-content .title-role { color: #eaeaf7; }
+        body.dark-theme .home-content p { color: #a3a3c2; }
+        body.dark-theme .home-tagline { color: #eaeaf7; border-top-color: #2a2a3d; }
+        body.dark-theme .home-tagline strong { color: #8b7cf6; }
+        body.dark-theme .section-title,
+        body.dark-theme .section-tagline,
+        body.dark-theme .skills-subhead { color: #eaeaf7; }
+        body.dark-theme .section-title span,
+        body.dark-theme .section-tagline span,
+        body.dark-theme .skills-subhead span { color: #8b7cf6; }
+        body.dark-theme .eyebrow { color: #8b7cf6; }
+        body.dark-theme .about-main p { color: #a3a3c2; }
+        body.dark-theme .about-main p strong { color: #eaeaf7; }
+        body.dark-theme .about-card { background: #1c1c2b; border-color: #2a2a3d; }
+        body.dark-theme .about-card-row { border-bottom-color: #2a2a3d; }
+        body.dark-theme .about-card-row .label { color: #8a8aa8; }
+        body.dark-theme .about-card-row .value { color: #8b7cf6; }
+        body.dark-theme .section-divider::before,
+        body.dark-theme .section-divider::after { background: linear-gradient(90deg, transparent, #34344d 50%, transparent); }
+        body.dark-theme .service-card,
+        body.dark-theme .skill-card,
+        body.dark-theme .project-card,
+        body.dark-theme .cert-card { background: #1c1c2b; border-color: #2a2a3d; }
+        body.dark-theme .service-card h3,
+        body.dark-theme .project-card h3,
+        body.dark-theme .cert-card h4,
+        body.dark-theme .skill-card { color: #eaeaf7; }
+        body.dark-theme .skill-card:hover { color: #8b7cf6; }
+        body.dark-theme .service-card p,
+        body.dark-theme .project-card p { color: #a3a3c2; }
+        body.dark-theme .project-card .tech,
+        body.dark-theme .cert-card .cert-label,
+        body.dark-theme .cert-card .cert-link { color: #8b7cf6; }
+        body.dark-theme .contact-info h2 { color: #eaeaf7; }
+        body.dark-theme .contact-info h2 span { color: #8b7cf6; }
+        body.dark-theme .contact-info p { color: #a3a3c2; }
+        body.dark-theme .contact-info p[style] { color: #cfcfe4 !important; }
+        body.dark-theme .social-item { background: #1c1c2b; border-color: #2a2a3d; color: #eaeaf7; }
+        body.dark-theme .social-item:hover { background: #23233a; border-color: #6c5ce7; }
+        body.dark-theme .contact-form h3 { color: #eaeaf7; }
+        body.dark-theme .contact-form input,
+        body.dark-theme .contact-form textarea { background: #1c1c2b; border-color: #2a2a3d; color: #eaeaf7; }
+        body.dark-theme .contact-note { color: #b7b7d1; border-top-color: #2a2a3d; }
+        body.dark-theme .back-btn { color: #8b7cf6; }
+        body.dark-theme .project-title { color: #eaeaf7; }
+        body.dark-theme .project-title span { color: #8b7cf6; }
+        body.dark-theme .project-description { color: #a3a3c2; }
+
+        @media (max-width: 768px) {
+            nav { position: sticky; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+                <nav>
+            <div class="logo">
+                <a href="#home" id="logoHomeLink">YN<span>.</span></a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#services" data-section="services">Services</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#projects" data-section="projects">Projects</a></li>
+                <li><a href="#certificates" data-section="certificates">Certificates</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+                <li><button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeToggleIcon"></i></button></li>
+                <li><a href="#" class="cv-btn" id="downloadCvBtn">Download CV</a></li>
+            </ul>
+        </nav>
+
+        <div id="main-content">
+                <section id="home" class="section">
+            <div class="home-grid">
+                <div class="home-content">
+                    <h2>FLUTTER DEVELOPER</h2>
+                    <h1>Youstina <span>Nabil</span></h1>
+
+                    <img src="WhatsApp_Image_2026-09-02_at_7.26.00_PM__1_-removebg-preview.png" alt="Youstina Nabil" class="profile-image" />
+
+                    <p>
+                        Building beautiful, fast, and responsive mobile applications using Flutter.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary" data-section="projects">View My Work →</a>
+                        <a href="#contact" class="btn btn-outline" data-section="contact">Contact Me →</a>
+                    </div>
+                </div>
+
+                                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-flutter">
+                            <i class="devicon-flutter-plain"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="phone-home-btn" id="phoneHomeBtn">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-tagline">
+                Let's build something <strong>great</strong> together.
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="about" class="section">
+            <div class="about-split">
+                <div class="about-main">
+                    <div class="eyebrow">01 — About</div>
+                    <h2 class="section-tagline">Apps built for real<br>user needs.</h2>
+                    <p><strong>Youstina Nabil</strong>, a Flutter developer most at home in <strong>mobile app development</strong> — the stage where an idea turns into something people can actually open, tap, and use.</p>
+                    <p>Comfortable across the full pipeline: translating UI designs into clean, responsive Flutter screens, structuring app logic and state, connecting to Firebase and REST APIs, and shipping a working, tested build. Recent work spans a BMI calculator with live calculation logic, a scored and timed quiz app, a flashcard app backed by local SQFlite storage, and a random-outcome game with a smooth, reactive UI.</p>
+                    <p>Every project is version-controlled on Git and GitHub, and treated as production-style work — tested by hand across devices and refined until the UI feels smooth, not just functional.</p>
+                    <a href="#services" class="btn btn-primary" id="moreAboutBtn">View Services →</a>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-row">
+                        <span class="label">Core tools</span>
+                        <span class="value">Flutter / Dart / Firebase</span>
+                    </div>
+                    <div class="about-card-row">
+                        <span class="label">Track</span>
+                        <span class="value">Mobile App Development</span>
+                    </div>
+                    <div class="about-card-row">
+                        <span class="label">Works with</span>
+                        <span class="value">Freelance & collaborations</span>
+                    </div>
+                    <div class="about-card-row">
+                        <span class="label">Delivery</span>
+                        <span class="value">Apps / UI Screens / Prototypes</span>
+                    </div>
+                    <div class="about-card-row">
+                        <span class="label">Based in</span>
+                        <span class="value">Egypt</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="services" class="section">
+            <div class="eyebrow">02 — Services</div>
+            <h2 class="section-tagline">Complete mobile solutions, from idea to launch.</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="devicon-flutter-plain"></i>
+                    <h3>Flutter Mobile App Development</h3>
+                    <p>End-to-end cross-platform mobile apps built with Flutter and Dart, from first screen to final release.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Clean, Responsive UI</h3>
+                    <p>Interfaces that look polished on any screen size, with attention to spacing, consistency, and usability.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Firebase Integration</h3>
+                    <p>Authentication, cloud data, and backend services connected directly into the app.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Local Data Storage</h3>
+                    <p>Offline-ready apps using SQFlite for fast, reliable on-device data management.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>REST API Integration</h3>
+                    <p>Connecting mobile apps to external services and backend APIs for real-time, dynamic data.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>App Maintenance &amp; Bug Fixing</h3>
+                    <p>Ongoing support, debugging, and performance improvements to keep existing apps running smoothly.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="skills" class="section">
+            <div class="eyebrow">03 — Skills</div>
+            <h2 class="section-tagline">Tools I use and traits I bring to every project.</h2>
+
+            <h3 class="skills-subhead">Technical <span>Skills</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card">Flutter</div><div class="skill-card">Dart</div>
+                <div class="skill-card">Firebase</div><div class="skill-card">SQFlite</div>
+                <div class="skill-card">REST API Integration</div><div class="skill-card">State Management</div>
+                <div class="skill-card">Git &amp; GitHub</div><div class="skill-card">UI/UX Design</div>
+            </div>
+
+            <h3 class="skills-subhead" style="margin-top:50px;">Soft <span>Skills</span></h3>
+            <div class="skills-grid">
+                <div class="skill-card">Communication</div><div class="skill-card">Presentation</div>
+                <div class="skill-card">Time Management</div><div class="skill-card">Team Work</div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="projects" class="section">
+            <div class="eyebrow">04 — Projects</div>
+            <h2 class="section-tagline">A few builds worth taking a closer look at.</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="bmi">
+                    <h3>BMI Calculator</h3>
+                    <div class="tech">Flutter · Dart</div>
+                    <p>BMI calculator app with clean UI.</p>
+                    <div class="project-buttons">
+                        <a href="#" class="btn-small view-project-btn">View Project</a>
+                        <a href="#" class="btn-small repo-btn">Repository</a>
+                    </div>
+                </div>
+                <div class="project-card" data-project="rps">
+                    <h3>RPS Random</h3>
+                    <div class="tech">Flutter · Dart</div>
+                    <p>Classic Rock Paper Scissors game with clean UI.</p>
+                    <div class="project-buttons">
+                        <a href="#" class="btn-small view-project-btn">View Project</a>
+                        <a href="#" class="btn-small repo-btn">Repository</a>
+                    </div>
+                </div>
+                <div class="project-card" data-project="flashcard">
+                    <h3>Flash Card</h3>
+                    <div class="tech">Flutter · SQFlite</div>
+                    <p>Flashcard app for effective learning.</p>
+                    <div class="project-buttons">
+                        <a href="#" class="btn-small view-project-btn">View Project</a>
+                        <a href="#" class="btn-small repo-btn">Repository</a>
+                    </div>
+                </div>
+                <div class="project-card" data-project="quizapp">
+                    <h3>QuizApp</h3>
+                    <div class="tech">Flutter · Dart</div>
+                    <p>Quiz with score and timer.</p>
+                    <div class="project-buttons">
+                        <a href="#" class="btn-small view-project-btn">View Project</a>
+                        <a href="#" class="btn-small repo-btn">Repository</a>
+                    </div>
+                </div>
+                <div class="project-card" data-project="calculator">
+                    <h3>Calculator</h3>
+                    <div class="tech">Flutter · Dart</div>
+                    <p>Calculator app with a clean and responsive UI.</p>
+                    <div class="project-buttons">
+                        <a href="#" class="btn-small view-project-btn">View Project</a>
+                        <a href="#" class="btn-small repo-btn">Repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="certificates" class="section">
+            <div class="eyebrow">05 — Certificates</div>
+            <h2 class="section-tagline">Proof of the time put into learning this craft.</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h4>Dart Developer Course</h4>
+                    <div class="cert-label">Certificate</div>
+                    <a href="https://drive.google.com/file/d/1KtvezHw1mDjVmbaLgdjuKhruHCfGa-2L/view?usp=drive_link" class="cert-link" target="_blank">View →</a>
+                </div>
+                <div class="cert-card">
+                    <h4>Flutter Development Guide</h4>
+                    <div class="cert-label">Certificate</div>
+                    <a href="https://drive.google.com/file/d/1ROSc7wLK78n2BIHUrVLy2navOdrzOf3J/view?usp=drive_link" class="cert-link" target="_blank">View →</a>
+                </div>
+                <div class="cert-card">
+                    <h4>SprintUp - Mobile Dev</h4>
+                    <div class="cert-label">Certificate</div>
+                    <a href="https://drive.google.com/file/d/1cK6pVig74aiC5sHrMas20XPhSZ2LBUsh/view?usp=drive_link" class="cert-link" target="_blank">View →</a>
+                </div>
+                <div class="cert-card">
+                    <h4>Information Technology Inst.</h4>
+                    <div class="cert-label">Certificate</div>
+                    <a href="https://drive.google.com/file/d/1YwhPyr7Ff4vIW5D9yFKQPWFSw2dlLPGl/view?usp=drive_link" class="cert-link" target="_blank">View →</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span class="divider-dot"></span></div>
+
+                <section id="contact" class="section">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="eyebrow">06 — Contact</div>
+                    <h2 class="section-tagline">Let's build something great together.</h2>
+                    <p>Have a project in mind? Let's talk about it.</p>
+                    <p style="font-weight:500; color:#2d2b4b;">Available for internships · freelance projects · collaborations</p>
+                    <div class="social-links">
+                        <a href="#" class="social-item" id="emailLink"><i class="fas fa-envelope"></i> EMAIL</a>
+                        <a href="#" class="social-item" id="linkedinLink"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
+                        <a href="#" class="social-item" id="githubLink"><i class="fab fa-github"></i> GITHUB</a>
+                        <a href="#" class="social-item" id="whatsappLink"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                    </div>
+                </div>
+
+                                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" id="formName" placeholder="Your Name" required />
+                        <input type="email" id="formEmail" placeholder="Your Email" required />
+                        <textarea id="formMessage" rows="4" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+                        <div class="contact-note">
+                <i class="fas fa-paper-plane" style="color:#6c5ce7; margin-right:8px;"></i> Always open to new opportunities.
+            </div>
+        </section>
+        </div>
+
+                <section id="project-details" class="section">
+            <div class="container">
+                <a href="#projects" class="back-btn" id="backToProjects">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+
+                <div class="project-detail-content">
+                    <h1 class="project-title" id="detailTitle">BMI Calculator</h1>
+                    <div class="project-tech" id="detailTech">Flutter · Dart</div>
+                    <p class="project-description" id="detailDesc">BMI calculator app with clean UI.</p>
+
+                    <div class="project-video">
+                        <video id="detailVideo" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="project-detail-buttons">
+                        <a href="#" class="btn btn-primary" id="detailRepoBtn" target="_blank">Repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <script>
+        (function() {
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeToggleIcon = document.getElementById('themeToggleIcon');
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-theme');
+                    const isDark = document.body.classList.contains('dark-theme');
+                    themeToggleIcon.classList.toggle('fa-moon', !isDark);
+                    themeToggleIcon.classList.toggle('fa-sun', isDark);
+                });
+            }
+
+            const mainContent = document.getElementById('main-content');
+            const projectDetails = document.getElementById('project-details');
+            const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+
+            function closeProjectDetails() {
+                projectDetails.classList.remove('open');
+                mainContent.style.display = '';
+            }
+
+            function goToSection(sectionId) {
+                closeProjectDetails();
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            function updateActiveLink() {
+                let currentSectionId = '';
+                const scrollPos = window.scrollY + 120;
+
+                document.querySelectorAll('.section:not(#project-details)').forEach(section => {
+                    const top = section.offsetTop;
+                    const height = section.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    if (section) goToSection(section);
+                });
+            });
+
+            document.querySelectorAll('.btn-group a[data-section]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    if (section) goToSection(section);
+                });
+            });
+
+            document.getElementById('logoHomeLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                goToSection('home');
+            });
+
+            document.getElementById('phoneHomeBtn').addEventListener('click', function() {
+                goToSection('home');
+            });
+
+            const moreBtn = document.getElementById('moreAboutBtn');
+            if (moreBtn) {
+                moreBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    goToSection('services');
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            window.addEventListener('load', updateActiveLink);
+
+            const projectData = {
+                bmi: {
+                    title: 'BMI Calculator',
+                    tech: 'Flutter · Dart',
+                    desc: 'BMI calculator app with clean UI.',
+                    video: 'WhatsApp Video 2026-09-02 at 8.53.03 PM.mp4',
+                    repoLink: 'https://github.com/youstina-4nabil/BMI'
+                },
+                rps: {
+                    title: 'RPS Random',
+                    tech: 'Flutter · Dart',
+                    desc: 'Classic Rock Paper Scissors game with clean UI.',
+                    video: 'WhatsApp Video 2026-09-02 at 9.22.14 PM.mp4',
+                    repoLink: 'https://github.com/youstina-4nabil/RPS_Random'
+                },
+                flashcard: {
+                    title: 'Flash Card',
+                    tech: 'Flutter · SQFlite',
+                    desc: 'Flashcard app for effective learning.',
+                    video: 'WhatsApp Video 2026-09-02 at 9.22.15 PM.mp4',
+                    repoLink: 'https://github.com/youstina-4nabil/Flash-Card-'
+                },
+                quizapp: {
+                    title: 'QuizApp',
+                    tech: 'Flutter · Dart',
+                    desc: 'Quiz with score and timer.',
+                    video: 'WhatsApp Video 2026-09-03 at 12.41.27 AM.mp4',
+                    repoLink: 'https://github.com/youstina-4nabil/Quize'
+                },
+                calculator: {
+                    title: 'Calculator',
+                    tech: 'Flutter · Dart',
+                    desc: 'Calculator app with a clean and responsive UI.',
+                    video: 'WhatsApp Video 2026-09-08 at 6.11.31 PM.mp4',
+                    repoLink: 'https://github.com/youstina-4nabil/Calculator'
+                }
+            };
+
+            function showProjectDetails(projectKey) {
+                const data = projectData[projectKey];
+                if (!data) return;
+
+                document.getElementById('detailTitle').textContent = data.title;
+                document.getElementById('detailTech').textContent = data.tech;
+                document.getElementById('detailDesc').textContent = data.desc;
+
+                const videoElement = document.getElementById('detailVideo');
+                const sourceElement = videoElement.querySelector('source');
+                if (sourceElement) {
+                    sourceElement.src = data.video;
+                    videoElement.load();
+                }
+
+                document.getElementById('detailRepoBtn').href = data.repoLink;
+
+                mainContent.style.display = 'none';
+                projectDetails.classList.add('open');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            document.querySelectorAll('.view-project-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const card = this.closest('.project-card');
+                    const projectKey = card.getAttribute('data-project');
+                    if (projectKey) showProjectDetails(projectKey);
+                });
+            });
+
+            document.getElementById('backToProjects').addEventListener('click', function(e) {
+                e.preventDefault();
+                goToSection('projects');
+            });
+
+            document.querySelectorAll('.repo-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const card = this.closest('.project-card');
+                    const projectKey = card.getAttribute('data-project');
+                    const data = projectData[projectKey];
+                    if (data && data.repoLink && data.repoLink !== '#') {
+                        window.open(data.repoLink, '_blank');
+                    } else {
+                        alert('يرجى إضافة رابط الـ Repository في الكود.');
+                    }
+                });
+            });
+
+            document.getElementById('downloadCvBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://drive.google.com/file/d/1sIaqSYeFm0vl7qh96cPHO4Dg1gJkyur0/view?usp=drive_link', '_blank');
+            });
+
+            document.getElementById('emailLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'mailto:youstinanabil641@gmail.com';
+            });
+
+            document.getElementById('linkedinLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://www.linkedin.com/in/youstina-nabil-601012374', '_blank');
+            });
+
+            document.getElementById('githubLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://github.com/youstina-4nabil', '_blank');
+            });
+
+            document.getElementById('whatsappLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://wa.me/201273452373', '_blank');
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('formName').value;
+                const email = document.getElementById('formEmail').value;
+                const message = document.getElementById('formMessage').value;
+                
+                if (name && email && message) {
+                    alert('✅ Sent Successfully!');
+                    this.reset();
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
+
+            document.querySelectorAll('.cert-card .cert-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        alert('يرجى إضافة الرابط الفعلي في الكود.');
+                    }
+                });
+            });
+
+            setTimeout(updateActiveLink, 100);
+        })();
+    </script>
+
+</body>
+</html>
